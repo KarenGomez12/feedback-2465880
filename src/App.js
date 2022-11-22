@@ -1,3 +1,13 @@
+//dependencias necesarias 
+import {useState} from "react";
+
+//data
+import Resenias from "./data/Resenias";
+
+//componentes
+import Resenia from "./componentes/Resenia";
+import ReseniasList from "./componentes/ReseniasList";
+
 // COMPONENTE NORMAL
 /* function App()  {
      return(
@@ -7,7 +17,7 @@
 export default App*/
 
 //COMPONENTE FUNCION FLECHA 
-const App = () =>{
+/*const App = () =>{
     const bootcamp = [
         {
             id:1,
@@ -29,6 +39,21 @@ const App = () =>{
                 ))}
             </ul>
         </>
+    )
+}
+export default App*/
+
+
+
+function App(){
+    
+    //crear estado para arreglo de resenias 
+    const [Lista_resenias, setListaResenias]= useState(Resenias)
+
+    return(
+        <div className="container">
+            <ReseniasList listaresenias={Lista_resenias}/>
+        </div>
     )
 }
 export default App

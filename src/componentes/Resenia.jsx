@@ -1,6 +1,7 @@
 import { useState } from "react"
-
-const Resenia = ({resenia}) =>{
+//IMPORTACION PARA ICONOS
+//import { FaTimes } from "react-icons/fa";
+const Resenia = ({resenia, deleteResenia}) =>{
 
     //Definir estado iniciales:
     const [rating, setRating] = useState(resenia.rating)
@@ -29,8 +30,8 @@ const Resenia = ({resenia}) =>{
                 { comment}
             </div>
 
-            <button onClick = {addNota}>
-                Cambiar Nota
+            <button onClick={()=> deleteResenia(resenia.id)} className="close">
+                Eliminar
             </button>
 
             <button onClick = { restNota}>

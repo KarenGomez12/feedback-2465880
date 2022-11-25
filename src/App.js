@@ -6,7 +6,7 @@ import Resenias from "./data/Resenias";
 
 //componentes
 import Resenia from "./componentes/Resenia";
-import ReseniasList from "./componentes/ReseniasList";
+import ReseniasList from "./componentes/ReseniaList";
 
 // COMPONENTE NORMAL
 /* function App()  {
@@ -50,9 +50,16 @@ function App(){
     //crear estado para arreglo de resenias 
     const [Lista_resenias, setListaResenias]= useState(Resenias)
 
+    //metodo para borrar una resenia por id 
+    const deleteResenia = id =>{
+        window.confirm("Estas seguro de borrar la resenia")
+    }
+    
     return(
         <div className="container">
-            <ReseniasList listaresenias={Lista_resenias}/>
+            <ReseniasList 
+            deleteResenia={deleteResenia}
+            listaresenias={Lista_resenias}/>
         </div>
     )
 }
